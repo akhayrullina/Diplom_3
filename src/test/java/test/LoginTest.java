@@ -53,7 +53,7 @@ class LoginTest {
 
     @AfterEach
     void deleteUsers() {
-        user.deleteUserAfterTest(user, userApi, checkResponse);
+        UserTestData.deleteUserAfterTest(user, userApi, checkResponse);
     }
 
     @Step("Проверка успешного входа в аккаунт через заполнение полей Email и Пароль в форме авторизации 'Вход' и клик по кнопке 'Войти'")

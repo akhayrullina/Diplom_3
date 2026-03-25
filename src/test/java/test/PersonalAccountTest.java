@@ -19,8 +19,6 @@ class PersonalAccountTest {
     private WebDriver driver;
     private HomePage homePage;
     private LoginPage loginPage;
-    private RegistrationPage registrationPage;
-    private RecoverPasswordPage recoverPasswordPage;
     private PersonalAccountPage personalAccountPage;
     private UserApi userApi;
     private UserCheckResponse checkResponse;
@@ -34,8 +32,6 @@ class PersonalAccountTest {
         driver = extension.getDriver();
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
-        registrationPage = new RegistrationPage(driver);
-        recoverPasswordPage = new RecoverPasswordPage(driver);
         personalAccountPage = new PersonalAccountPage(driver);
     }
 
@@ -53,7 +49,7 @@ class PersonalAccountTest {
 
     @AfterEach
     void deleteUsers() {
-        user.deleteUserAfterTest(user, userApi, checkResponse);
+        UserTestData.deleteUserAfterTest(user, userApi, checkResponse);
     }
 
     @Step("Проверка успешного входа в аккаунт через заполнение полей Email и Пароль в форме авторизации 'Вход' и клик по кнопке 'Войти'")
